@@ -1,0 +1,28 @@
+import ElectricalComponents;
+size(200);
+
+pair A=(40,50), B=(20,150),C=(100,100);
+pair D=(150,100),E=(100,150), F=(140,150);
+join(A,C,Resistor(size=2,"$R_1$"));
+join(B,C,Resistor(size=2,"$R_2$"));
+join(D,C,Resistor(size=2,Label("$R_3$",align=S)));
+Element i1=Intensity();
+i1.addLabel(Label(rotate(90)*"$I_1$",align=N));
+i1.setPosition(.5);
+Element i2=Intensity(type=1);
+i2.addLabel(Label(rotate(-45)*"$I_2$",align=S));
+i2.setPosition(.5);
+join(E,C,i1); 
+join(F,C,i2);
+join((40,20),A,dot=false,Tension("$\mathrm{U_1}$"));
+Element g1=Ground(size=2,center=((40,20)));
+g1.draw();
+join((20,20),B,dot=false,Tension("$\mathrm{U_2}$"));
+Element g2=Ground(size=2,center=((20,20)));
+g2.draw();
+join((100,20),C,dot=false,Tension("U?",drawpen=blue)); 
+Element g3=Ground(size=2,center=((100,20)));
+g3.draw();
+join((150,20),D,dot=false,Tension("$\mathrm{U_3}$")); 
+Element g4=Ground(size=2,center=((150,20)));
+g4.draw();

@@ -1,0 +1,52 @@
+%% Version de la macro figAsy utilisant minipage et listings
+%%%%                  debut macro                       %%%%
+\newcommand{\figAsy}[5]
+{\noindent
+\begin{minipage}[c]{0.4\textwidth}
+\begin{figure}[H]
+\ffigbox[\FBwidth]
+{\includegraphics[width=#1, height=#2]{#3.pdf}}
+{\caption{\label{#5}\footnotesize #4}}
+\end{figure}
+\end{minipage}
+\hfill
+\begin{minipage}[c]{0.55\textwidth}
+ \tiny
+   \lstinputlisting[inputencoding=utf8/latin1,tabsize=7]{#3.asy}
+ \normalsize
+\end{minipage}
+\vspace{0.5cm}
+}
+%% La même macro mais avec la possibilité d'indiquer la plage de ligne
+%% à afficher.
+\newcommand{\figAsyLine}[6]
+{
+\begin{minipage}[c]{0.45\textwidth}
+\begin{figure}[H]
+\ffigbox[\FBwidth]
+{\includegraphics[width=#1, height=#2]{#3.pdf}}
+{\caption{\footnotesize #4}}
+\end{figure}
+\end{minipage}
+\hfill
+\begin{minipage}[c]{0.55\textwidth}
+ \tiny
+   \lstinputlisting[inputencoding=utf8/latin1,firstline=#5,lastline=#6]{#3.asy} 
+ \normalsize
+\end{minipage}
+\vspace{0.5cm}
+}
+
+%% La macro pour insérer uniquement le code%%%%%%%%%%%%%%%%%%%%%%
+\newcommand{\code}[2]
+{
+\begin{center}
+\begin{minipage}{#1}
+\lstinputlisting[inputencoding=utf8/latin1]{#2.asy}  
+\end{minipage}
+\end{center}
+}
+
+%%Définition de la numérotation des subsection%%%%%%%%%%%
+\renewcommand{\thesubsubsection}{\alph{subsubsection}.}
+%%%%                   fin macro                         %%%%

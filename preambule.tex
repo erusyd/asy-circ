@@ -1,0 +1,97 @@
+\usepackage[a4paper, textheight=22cm, right=3cm, heightrounded]{geometry}
+\usepackage[utf8]{inputenc} 	%les accents français
+\usepackage[T1]{fontenc}        %encodage clavier français
+\usepackage[inline]{asymptote}  
+\usepackage[english]{babel}   	%typo et césures françaises
+\usepackage{amsmath, amsfonts, amsthm, amssymb}	% les maths
+\usepackage{enumerate}		%listes enrichies
+\usepackage{graphicx}           %insertion de figures
+\usepackage{xcolor}
+\usepackage{color,colortbl}
+\usepackage{listingsutf8}       %intégration utf8 dans listing
+\usepackage{calc}
+\usepackage{multicol}
+\usepackage{tabularx}           %pour des tableaux sur mesures
+\usepackage{tabulary}
+\usepackage{import}             %pour une seule compilation à partir de
+                                %l'ensemble des sources
+%\usepackage{frcursive}         %une fonte cursive
+\usepackage[ %captio et sa personnalisation
+labelfont={small,bf},textfont=it,figurename=Fig,
+%le compteur fig repart à 0 à chaque nouveau chapitre
+%lorsque la légende ne contient qu'une seule ligne
+%elle doit tenir compte de la justification
+figurewithin=section,singlelinecheck=false,
+%Alignement à gauche
+justification=raggedright]{caption}
+
+%%%% Des figures sans label juste un numéro%%%%%%%%
+%On modifie le label de la légende
+%\DeclareCaptionFormat{Fig}{\begin{cursive}Fig #2\end{cursive}} 
+%\captionsetup{captionformat=Fig,labelsep=quad}
+%On change la couleur du label
+%\DeclareCaptionFont{gray}{\color{gray}}
+%\captionsetup{labelfont={gray,bf}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\usepackage{floatrow} %floatrow et sa personnalisation
+\floatsetup{style=plain,capposition=TOP} 
+\usepackage[Lenny]{fncychap} %Mise en page des chapitres
+
+%Définition d'un nouveau langage(asy) pour listing
+\definecolor{bckgcolor}{rgb}{0.9,0.9,0.8}
+\definecolor{keywordstc}{rgb}{0.7,0,0}
+\definecolor{comments}{rgb}{0,0,1}
+\lstdefinelanguage{asy}
+                  {morekeywords={arrowbar, path, draw, label, real, pair,
+                      picture, ticks, pen, bool, void},
+                    sensitive=false,
+                    morecomment=[l][\color{comments}]{//},
+                    morecomment=[s]{/*}{*/},
+                    morestring=[b]"
+                  }
+ \lstset{
+   frameround=tttt,
+   frame=single,
+   numbers=left,
+   language=asy, 
+   numberstyle=\tiny,stepnumber=1, 
+   basicstyle=\scriptsize\ttfamily,
+   keywordstyle=\color{keywordstc}, 
+   numbersep=5pt,
+   tabsize=2,
+   backgroundcolor=\color{bckgcolor}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Majuscules droites en mode math %%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\DeclareMathVersion{majDroites}
+\DeclareSymbolFont{majuscules}{OML}{cmm}{m}{it}
+\SetSymbolFont{majuscules}{majDroites}{OT1}{cmr}{m }{n}
+\DeclareMathSymbol{A}{\mathalpha}{majuscules}{"41}
+\DeclareMathSymbol{B}{\mathalpha}{majuscules}{"42}
+\DeclareMathSymbol{C}{\mathalpha}{majuscules}{"43}
+\DeclareMathSymbol{D}{\mathalpha}{majuscules}{"44}
+\DeclareMathSymbol{E}{\mathalpha}{majuscules}{"45}
+\DeclareMathSymbol{F}{\mathalpha}{majuscules}{"46}
+\DeclareMathSymbol{G}{\mathalpha}{majuscules}{"47}
+\DeclareMathSymbol{H}{\mathalpha}{majuscules}{"48}
+\DeclareMathSymbol{I}{\mathalpha}{majuscules}{"49}
+\DeclareMathSymbol{J}{\mathalpha}{majuscules}{"4A}
+\DeclareMathSymbol{K}{\mathalpha}{majuscules}{"4B}
+\DeclareMathSymbol{L}{\mathalpha}{majuscules}{"4C}
+\DeclareMathSymbol{M}{\mathalpha}{majuscules}{"4D}
+\DeclareMathSymbol{N}{\mathalpha}{majuscules}{"4E}
+\DeclareMathSymbol{O}{\mathalpha}{majuscules}{"4F}
+\DeclareMathSymbol{P}{\mathalpha}{majuscules}{"50}
+\DeclareMathSymbol{Q}{\mathalpha}{majuscules}{"51}
+\DeclareMathSymbol{R}{\mathalpha}{majuscules}{"52}
+\DeclareMathSymbol{S}{\mathalpha}{majuscules}{"53}
+\DeclareMathSymbol{T}{\mathalpha}{majuscules}{"54}
+\DeclareMathSymbol{U}{\mathalpha}{majuscules}{"55}
+\DeclareMathSymbol{V}{\mathalpha}{majuscules}{"56}
+\DeclareMathSymbol{W}{\mathalpha}{majuscules}{"57}
+\DeclareMathSymbol{X}{\mathalpha}{majuscules}{"58}
+\DeclareMathSymbol{Y}{\mathalpha}{majuscules}{"59}
+\DeclareMathSymbol{Z}{\mathalpha}{majuscules}{"5A}
+\mathversion{majDroites} 
+

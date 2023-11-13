@@ -1,0 +1,5 @@
+1°) unzip asy-circ1.0
+2°) in the folder asytopdf, compile all files with
+    asy -f pdf *.asy
+3°) compile asy-circ-english.tex
+
